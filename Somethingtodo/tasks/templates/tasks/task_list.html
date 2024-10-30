@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<style>
+    /* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f7;
+}
+
+.container {
+    width: 85%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    border: 2px solid #e72580; 
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #d83b87;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #8b2f65;
+    font-size: 35px;
+}
+
+p.author {
+    color: rgb(24, 22, 23);
+    text-align: center;
+    font-size: 15px;
+    text-decoration: underline;
+}
+.task-list {
+    list-style-type: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.task-desc {
+    margin-left: 10px;
+    flex-grow: 1;
+    color: #666;
+}
+
+.completed {
+    color: green;
+    font-style: bold;
+}
+
+.complete-btn {
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.complete-btn:hover {
+    background-color: #f779b4;
+}
+
+.create-task-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ee83b9;
+    color: #111111;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+.create-task-btn:hover {
+    background-color: #65c2c2;
+}
+
+.delete-btn {
+    background-color: #ffffff;
+    color: #e70f0f;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #f08c96;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Midterm Practical Exam in Web Systems and Technologies</h1>
+        <p class="author">by: Ilonah Jean A. Decolongon BSIT III-A</p>
+        <h2>Task List📋</h2>
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="task-item">
+                    <span class="task-title">{{ task.title }}</span> - 
+                    <span class="task-desc">{{ task.description }}</span>
+                    {% if not task.is_complete %}
+                        <a href="{% url 'complete_task' task.id %}" class="complete-btn">Mark as Complete</a>
+                    {% else %}
+                        <span class="completed">Completed☺✅</span>
+                    {% endif %}
+                    <a href="{% url 'delete_task' task.id %}" class="delete-btn">Delete❎</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'create_task' %}" class="create-task-btn">Create New Task✍</a>
+    </div>
+</body>
+</html>
