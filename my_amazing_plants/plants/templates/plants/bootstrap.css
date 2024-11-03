@@ -1,0 +1,162 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8daa89; /* Light gray for testing */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-family: 'Montserrat', sans-serif;  
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #b3ca87;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #ecf0f1 !important;  
+}
+
+.navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: #bc1a7e !important;  
+}
+/* Styling for social media icons */
+.nav-link i {
+font-size: 1.0rem; /* Adjust the size of the icons */
+color: #fbfdfa; /* Set the default color */
+margin-right: 10px; /* Add space between the icons */
+transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect for social media icons */
+.nav-link i:hover {
+color: #ee81ab; /* Change color on hover */
+}
+
+.container {
+    max-width: 80%; /* Maximum width of the container */
+    margin: 50px auto; /* Center horizontally and add vertical space */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for contrast */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+    color: #44a759; 
+}
+
+table {
+    width: 100%; /* Table takes full width of the container */
+    margin: 5px auto; /* Center table within the container */
+    border-collapse: collapse; /* Prevent double borders */
+    background-color: #f8f9fa;
+}
+
+th, td {
+    padding: 15px;
+    border: 2px solid #40754b;
+    text-align: center; /* Center text in table cells */
+    background-color: #f8f9fa;
+    color: #235e19; /* Header color */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #235e19; /* Header color */
+    font-weight: bold;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px; /* Rounded corners for images */
+    transition: transform 0.3s; /* Smooth scale effect on hover */
+}
+
+img:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.btn-success {
+    background-color: #568661; /* Green color for Add New Plant button */
+    color: #f8f6f6;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #88ad7d;  /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.btn-warning, .btn-danger, .btn-trade {
+    border: 2px;
+    border-color: #a6c57e;
+    border-radius: 25px;
+    padding: 1px 10px; /* Smaller padding for small buttons */
+    font-size: 0.75rem; /* Smaller font size */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-warning {
+    background-color: #9de0a0; /* Yellow color for Edit button */
+    color: #111;
+}
+
+.btn-warning:hover {
+    background-color: #93e0e2; /* Darker yellow on hover */
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #ee7985; /* Red color for Delete button */
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-2px);
+}
+
+.btn-trade {
+    background-color: #c1d48c; /* Primary blue color */
+    color: rgb(109, 107, 107); /* Text color */
+}
+
+.btn-trade:hover {
+    background-color: #91c0f1; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #6d945e; /* Dark gray-blue */
+    color: #ecf0f1; /* Light gray */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Full width on smaller screens */
+    }
+
+    img {
+        width: 80px; /* Smaller images on mobile */
+    }
+}

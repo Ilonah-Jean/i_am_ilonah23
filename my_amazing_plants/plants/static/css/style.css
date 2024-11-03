@@ -1,0 +1,158 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #568661; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #aebd85; 
+    backdrop-filter: blur(5px); 
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ecf0f1 !important;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #bc1a7e !important;
+}
+
+/* Styling for social media icons */
+.nav-link i {
+    font-size: 1.0rem; 
+    color: #fbfdfa; 
+    margin-right: 10px; 
+    transition: color 0.3s; 
+}
+
+/* Hover effect for social media icons */
+.nav-link i:hover {
+    color: #ee81ab; 
+}
+
+.container {
+    max-width: 1000px; 
+    margin: 30px auto; 
+    padding: 30px;
+    background-color:rgb(216, 224, 211);
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+    color: #44a759;
+}
+
+table {
+    background-color: #f0f0f0;
+    width: 100%; 
+    margin: 20px 0; 
+    border-collapse: collapse; 
+}
+
+th, td {
+    padding: 15px;
+    border: 2px solid #40754b;
+    text-align: center; 
+    background-color: #f8f9fa;
+    color: #235e19; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #235e19; 
+    font-weight: bold;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px; 
+    transition: transform 0.3s; 
+}
+
+img:hover {
+    transform: scale(1.1); 
+}
+
+.btn-success {
+    background-color: #568661; 
+    color: #f8f6f6;
+    border: none;
+    border-radius: 25px; 
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #88ad7d; 
+    transform: translateY(-2px); 
+}
+
+/* Button styles for actions */
+.btn-warning,
+.btn-danger,
+.btn-trade {
+    border-radius: 25px;
+    padding: 5px 15px; 
+    font-size: 0.9rem; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-warning {
+    background-color: #9de0a0; 
+    color: #111;
+}
+
+.btn-warning:hover {
+    background-color: #93e0e2; 
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #ee7985; 
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; 
+    transform: translateY(-2px);
+}
+
+.btn-trade {
+    background-color: #c1d48c; 
+    color: rgb(109, 107, 107); 
+}
+
+.btn-trade:hover {
+    background-color: #91c0f1; 
+    transform: translateY(-2px); 
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(109, 148, 94, 0.8); 
+    color: #ecf0f1; 
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

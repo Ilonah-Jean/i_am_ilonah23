@@ -1,0 +1,34 @@
+/* Custom navbar styles */
+.navbar-custom {
+    background-color: #4CAF50; /* Change this to your desired background color */
+}
+
+.navbar-custom .navbar-brand {
+    color: #ffffff; /* Change brand text color */
+    font-family: 'Arial', sans-serif; /* Change font family for brand */
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff; /* Change link color */
+    font-family: 'Arial', sans-serif; /* Change font family for links */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #FFD700; /* Change color on hover */
+}
+
+/* Customize toggler icon */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Change border color for toggler */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Change the color of the toggler icon */
+}
+
+/* Additional responsive styles */
+@media (max-width: 576px) {
+    .navbar-custom {
+        text-align: center; /* Center align items in mobile view */
+    }
+}
