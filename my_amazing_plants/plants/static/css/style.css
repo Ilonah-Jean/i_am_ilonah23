@@ -1,3 +1,4 @@
+
 /* General reset */
 * {
     margin: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-    background-color: #568661; 
+    background-color: #fcfffd; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +17,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background-color: #aebd85; 
+    background-color: #668d6e; 
     backdrop-filter: blur(5px); 
 }
 
@@ -47,7 +48,7 @@ body {
     max-width: 1000px; 
     margin: 30px auto; 
     padding: 30px;
-    background-color:rgb(216, 224, 211);
+    background-color:rgb(254, 255, 253);
     border-radius: 10px; /* Rounded corners */
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -63,6 +64,7 @@ table {
     background-color: #f0f0f0;
     width: 100%; 
     margin: 20px 0; 
+    border: 2px solid #568661;
     border-collapse: collapse; 
 }
 

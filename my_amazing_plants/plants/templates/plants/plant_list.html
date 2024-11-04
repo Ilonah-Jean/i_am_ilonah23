@@ -12,73 +12,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<!-- Navigation Bar -->     
-<nav class="navbar navbar-expand-lg navbar-light bg-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'plant_list' %}">Plant Trading App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'plant_list' %}">Home</a>
-                </li>
-            </ul> 
-            <div class="d-flex">
-                <a href="https://www.facebook.com" class="nav-link" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com" class="nav-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:youremail@example.com" class="nav-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>               
-            <form class="d-flex ms-auto" action="{% url 'plant_list' %}" method="get">
-                <input class="form-control me-2" type="search" placeholder="Search plants" aria-label="Search" name="search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
-
-<div class="container mt-4">
-    <h1 class="mb-4">🪴 Welcome to the Plant Trading Collection 🪴</h1>
-    <p>Caring for plants is a gentle reminder that growth is a journey, not a race. Each day, as you observe the small changes—a new sprout, a brighter leaf—you’re reminded that progress often starts quietly.</p>
-    <a href="{% url 'plant_create' %}" class="btn btn-success mb-3">Add New Plant 🌿</a>
-    
-    <div class="row">
-        {% for plant in plants %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                {% if plant.image %}
-                <img src="{{ plant.image.url }}" class="card-img-top" alt="{{ plant.name }}">
-                {% else %}
-                <p class="text-center mt-2">No image available</p>
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ plant.name }}</h5>
-                    <p class="card-text">₱{{ plant.price }}</p>
-                    <p class="card-text">{{ plant.description }}</p>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="{% url 'plant_update' plant.pk %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{% url 'plant_delete' plant.pk %}" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="{% url 'plant_trade' plant.pk %}" class="btn btn-primary btn-sm">Trade</a>
-                </div>
+    <!-- Navigation Bar -->     
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'plant_list' %}">Plant Trading App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex ms-auto">
+                    <a href="https://www.facebook.com" class="nav-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="nav-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:youremail@example.com" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>               
+                <form class="d-flex" action="{% url 'plant_list' %}" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search plants" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
         </div>
-        {% endfor %}
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">🪴 Welcome to the Plant Trading Collection 🪴</h1>
+        <p>This is a collection of beautiful plants available for trading. Feel free to explore our collection.</p>
+        <p>Caring for plants is a gentle reminder that growth is a journey, not a race. Each day, as you observe the small changes, a new sprout, a brighter leaf, you’re reminded that progress often starts quietly. Reading plants helps us notice the beauty in life's details and teaches us that nurturing, even in small ways, makes a difference. Let your time with your plants be a moment to pause, breathe, and find joy in watching life unfold at its own perfect pace.</p>
+        <a href="{% url 'plant_create' %}" class="btn btn-success mb-3">Add New Plant 🌿</a>
+        
+        <div class="row">
+            {% for plant in plants %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    {% if plant.image %}
+                    <img src="{{ plant.image.url }}" class="card-img-top" alt="{{ plant.name }}">
+                    {% else %}
+                    <p class="text-center mt-2">No image available</p>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plant.name }}</h5>
+                        <p class="card-text">{{ plant.description }}</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="{% url 'plant_update' plant.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'plant_delete' plant.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{% url 'plant_trade' plant.pk %}" class="btn btn-primary btn-sm">Trade</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <p class="text-center">No plants available.</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer class="text-center mt-4">
-    <p>&copy; 2024 🪴 Plant Trading Collection 🪴. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 🪴 Plant Trading Collection 🪴. All rights reserved.</p>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
